@@ -1,0 +1,46 @@
+{
+  "model": "hist_gradient_boosting",
+  "features_n": 52,
+  "split": {
+    "held_out_clients": 6,
+    "total_clients": 32,
+    "test_rows": 2325
+  },
+  "eval_on_test": {
+    "roc_auc": 0.8211,
+    "avg_precision": 0.8369,
+    "precision_at_50": 0.98,
+    "test_base_rate": 0.5363
+  },
+  "actions": {
+    "REVIEW": 15056,
+    "NO_ACTION": 11838,
+    "MONITOR": 3090,
+    "REFRESH": 16
+  },
+  "reason_codes": {
+    "declining_high_signal": 11746,
+    "healthy": 6929,
+    "low_value": 4909,
+    "declining_borderline": 3310,
+    "declining_low_signal": 1980,
+    "borderline_low_signal": 1105,
+    "stale_declining_high_value": 16,
+    "stale_flat": 5
+  },
+  "queue_file": "content_action_queue.csv",
+  "note": "eval numbers are ONLY from the 6-client holdout; queue is deployment-style scoring of the full slice.",
+  "monitoring": {
+    "decline_rate": 0.5420666666666667,
+    "actionable_share": 0.5024,
+    "low_signal_share": 0.2664666666666667,
+    "reviews_per_pass": 15072,
+    "top_features": [
+      "content_age_days",
+      "days_with_impressions",
+      "word_count",
+      "days_since_last_update",
+      "impression_tier_moderate"
+    ]
+  }
+}
