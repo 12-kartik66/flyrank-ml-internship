@@ -1,0 +1,83 @@
+{
+  "model": "hist_gradient_boosting",
+  "features_n": 52,
+  "split": {
+    "held_out_clients": 6,
+    "total_clients": 32,
+    "train_rows": 27675,
+    "test_rows": 2325,
+    "test_base_rate": 0.391,
+    "full_base_rate": 0.5421
+  },
+  "eval_on_test_histgb": {
+    "roc_auc": 0.7812,
+    "avg_precision": 0.6973,
+    "precision_at_20": 0.9,
+    "precision_at_50": 0.9,
+    "precision_at_100": 0.92
+  },
+  "baseline_on_test": {
+    "roc_auc": 0.6714,
+    "avg_precision": 0.4704,
+    "precision_at_20": 0.35,
+    "precision_at_50": 0.28,
+    "precision_at_100": 0.22
+  },
+  "actions": {
+    "REVIEW": 15056,
+    "NO_ACTION": 11838,
+    "MONITOR": 3090,
+    "REFRESH": 16
+  },
+  "reason_codes": {
+    "declining_high_signal": 11746,
+    "healthy": 6929,
+    "low_value": 4909,
+    "declining_borderline": 3310,
+    "declining_low_signal": 1980,
+    "borderline_low_signal": 1105,
+    "stale_declining_high_value": 16,
+    "stale_flat": 5
+  },
+  "action_decline_rates": {
+    "MONITOR": 0.6883,
+    "NO_ACTION": 0.2425,
+    "REFRESH": 0.9375,
+    "REVIEW": 0.7471
+  },
+  "top_permutation_features": [
+    {
+      "feature": "days_with_impressions",
+      "imp": 0.29740565158210747
+    },
+    {
+      "feature": "avg_position",
+      "imp": 0.057819327130453305
+    },
+    {
+      "feature": "log_impressions_90d",
+      "imp": 0.03767752481462845
+    },
+    {
+      "feature": "ctr",
+      "imp": 0.027419542801737883
+    },
+    {
+      "feature": "scroll_rate",
+      "imp": 0.012671542577986727
+    },
+    {
+      "feature": "content_age_days",
+      "imp": 0.005214956523901049
+    },
+    {
+      "feature": "days_since_last_update",
+      "imp": 0.004816477410452946
+    },
+    {
+      "feature": "log_clicks_90d",
+      "imp": 0.00397694430460005
+    }
+  ],
+  "note": "eval numbers are ONLY from the 6-client holdout; actions are deployment-style scoring of the full slice."
+}
